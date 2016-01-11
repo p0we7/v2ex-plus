@@ -69,6 +69,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         sendResponse({keyReplyColor: getCookie('keyReplyColor'), keyReplyA: getCookie('keyReplyA'), fold: getCookie('fold')});
     }else if ( request.get_newWindow_status ){
         sendResponse({newWindow_status: getCookie('newWindow')});
+    }else if ( request.get_realDate_status ){
+        sendResponse({realDate_status: getCookie('realDate')});
     }else if ( request.get_blockList ){
         $.get("https://www.v2ex.com",function(data,status){
             if(status == 'success'){

@@ -44,6 +44,14 @@ function saveChoice(e){
     _fold[0].onclick = saveChoice;
     _fold[1].onclick = saveChoice;
 
+    //绝对时间 默认关闭
+    var _realDate = document.realDateSelect.realDate;
+    getCookie('realDate') && (_realDate[0].checked = true) || (_realDate[1].checked = true);
+    _realDate[0].disabled = false;
+    _realDate[1].disabled = false;
+    _realDate[0].onclick = saveChoice;
+    _realDate[1].onclick = saveChoice;
+
     //定时激活微博 默认关闭
     var _autoLoginWeibo = document.autoLoginWeiboSelect.autoLoginWeibo;
     getCookie('autoLoginWeibo') && (_autoLoginWeibo[0].checked = true) || (_autoLoginWeibo[1].checked = true);
